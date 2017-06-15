@@ -24,7 +24,10 @@ test_scripts:
     - git clone https://gitlab.com/atomap/atomap.git
     - pip3 install --user atomap/
     - cd basic_example
+    - sed -i '1iimport matplotlib\nmatplotlib.use("Agg")' basic_example.py
     - python3 basic_example.py
     - cd ../no_config_parameters/
+    - sed -i '1iimport matplotlib\nmatplotlib.use("Agg")' no_config_parameters.py
     - python3 no_config_parameters.py
+    - sed -i '1iimport matplotlib\nmatplotlib.use("Agg")' no_config_parameters_two_sublattices.py
     - python3 no_config_parameters_two_sublattices.py
