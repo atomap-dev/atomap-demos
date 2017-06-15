@@ -1,18 +1,18 @@
 import hyperspy.api as hs
-from atomap.atom_finding_refining import plot_feature_separation
-from atomap.main import make_atom_lattice_from_image
-from atomap.process_parameters import PerovskiteOxide110
+import atomap.api as am
 
 s = hs.load("test_ADF_cropped.hdf5")
 s_abf = hs.load("test_ABF_cropped.hdf5")
 
-plot_feature_separation(s)
-model_parameters = PerovskiteOxide110()
+s_separation = am.get_feature_separation(s)
 
-atom_lattice = make_atom_lattice_from_image(
-        s,
-        model_parameters=model_parameters,
+process_parameter = am.process_parameters.PerovskiteOxide110()
+
+atom_lattice = am.make_atom_lattice_from_image(
+        s_image0=s,
+        process_parameter=process_parameter,
         pixel_separation=19,
         s_image1=s_abf)
-atom_lattice.plot_all_sublattices()
-atom_lattice.save_atom_lattice()
+s_atom_list = atom_lattice.get_sublattice_atom_list_on_image()
+s_atom_list.plot()
+atom_lattice.save()
