@@ -10,4 +10,5 @@ test_notebooks:
     - git clone https://gitlab.com/atomap/atomap.git
     - pip3 install hyperspy[all]
     - pip3 install --user atomap/
+    - cd notebook_example
     - py.test --nbval-lax --current-env
