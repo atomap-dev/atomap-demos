@@ -7,13 +7,14 @@ test_notebooks:
     - pip3 install --upgrade pip
     - pip3 install nbval 
     - pip3 install --upgrade nbval 
+    - pip3 install --upgrade pytest
     - pip3 install --upgrade scipy
     - pip3 install --upgrade matplotlib
     - pip3 install hyperspy[all]
     - git clone https://gitlab.com/atomap/atomap.git
     - pip3 install --user atomap/
     - cd notebook_example
-    - py.test --nbval-lax --current-env
+    - python3 -m pytest --nbval-lax --current-env
 
 test_scripts:
     image: ubuntu:latest
