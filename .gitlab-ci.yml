@@ -12,6 +12,8 @@ test_notebooks:
     - pip3 install --user atomap/
     - cd notebook_example
     - python3 -m pytest --nbval-lax --current-env
+    except:
+    - release
 
 test_scripts:
     image: ubuntu:latest
@@ -31,6 +33,8 @@ test_scripts:
     - python3 no_config_parameters.py
     - sed -i '1iimport matplotlib\nmatplotlib.use("Agg")' no_config_parameters_two_sublattices.py
     - python3 no_config_parameters_two_sublattices.py
+    except:
+    - release
 
 test_notebooks_release:
     image: ubuntu:latest
