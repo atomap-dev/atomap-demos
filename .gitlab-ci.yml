@@ -12,6 +12,8 @@ test_notebooks:
     - pip3 install --user atomap/
     - cd notebook_example
     - python3 -m pytest --nbval-lax --current-env
+    - cd ../nanoparticle_notebook
+    - python3 -m pytest --nbval-lax --current-env
     except:
     - release
 
