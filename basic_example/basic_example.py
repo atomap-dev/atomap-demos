@@ -2,7 +2,10 @@ import hyperspy.api as hs
 import atomap.api as am
 
 s = hs.load("test_ADF_cropped.hdf5")
+s.change_dtype('float64')
+
 s_abf = hs.load("test_ABF_cropped.hdf5")
+s_abf.change_dtype('float64')
 
 s_separation = am.get_feature_separation(s)
 
@@ -15,4 +18,4 @@ atom_lattice = am.make_atom_lattice_from_image(
         s_image1=s_abf)
 s_atom_list = atom_lattice.get_sublattice_atom_list_on_image()
 s_atom_list.plot()
-atom_lattice.save()
+atom_lattice.save(overwrite=True)
