@@ -2,6 +2,7 @@ import hyperspy.api as hs
 import atomap.api as am
 
 s = hs.load("srtio3_100.hdf5")
+s.change_dtype('float64')
 
 ######## Finding optimal peak separation
 
