@@ -1,11 +1,8 @@
 import hyperspy.api as hs
 import atomap.api as am
 
-s = hs.load("test_ADF_cropped.hdf5")
-s.change_dtype('float64')
-
-s_abf = hs.load("test_ABF_cropped.hdf5")
-s_abf.change_dtype('float64')
+s = hs.load("test_ADF_cropped.hspy")
+s_abf = hs.load("test_ABF_cropped.hspy")
 
 s_separation = am.get_feature_separation(s)
 
