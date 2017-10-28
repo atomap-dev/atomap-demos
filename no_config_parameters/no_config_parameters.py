@@ -1,14 +1,13 @@
 import hyperspy.api as hs
 import atomap.api as am
 
-s = hs.load("srtio3_100.hdf5")
-s.change_dtype('float64')
+s = hs.load("srtio3_100.hspy")
 
 ######## Finding optimal peak separation
 
 s_separation = am.get_feature_separation(s)
 # Look at images in the folder to find an optimal peak separation
-# 13 pixels is a good value 
+# 13 pixels is a good value
 
 process_parameter = am.process_parameters.GenericStructure()
 atom_lattice = am.make_atom_lattice_from_image(

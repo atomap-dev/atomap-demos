@@ -1,7 +1,7 @@
 import hyperspy.api as hs
 import atomap.api as am
 
-s = hs.load("srtio3_100.hdf5")
+s = hs.load("srtio3_100.hspy")
 s.axes_manager[0].scale = 10*0.3905/296.09
 s.axes_manager[1].scale = 10*0.3905/296.09
 
