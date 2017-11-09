@@ -11,8 +11,7 @@ process_parameter = am.process_parameters.PerovskiteOxide110()
 atom_lattice = am.make_atom_lattice_from_image(
         s_image0=s,
         process_parameter=process_parameter,
-        pixel_separation=19,
+        pixel_separation=17,
         s_image1=s_abf)
-s_atom_list = atom_lattice.get_sublattice_atom_list_on_image()
-s_atom_list.plot()
+atom_lattice.plot()
 atom_lattice.save(overwrite=True)
