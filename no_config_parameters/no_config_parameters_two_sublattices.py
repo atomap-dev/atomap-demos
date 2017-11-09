@@ -19,7 +19,7 @@ atom_lattice = am.make_atom_lattice_from_image(
         s,
         process_parameter=generic_structure,
         pixel_separation=13)
+atom_lattice.name = 'srtio3_100_two_sublattices'
 
-s_atom_list = atom_lattice.get_sublattice_atom_list_on_image()
-s_atom_list.plot()
+atom_lattice.plot()
 atom_lattice.save(overwrite=True)
