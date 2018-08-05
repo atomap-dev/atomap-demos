@@ -15,6 +15,8 @@ test_non_release_branches:
     - xvfb-run -a python3 -m pytest --nbval-lax --current-env
     - cd ../two_sublattices_notebook
     - xvfb-run -a python3 -m pytest --nbval-lax --current-env
+    - cd ../adf_quantification_notebook
+    - xvfb-run -a python3 -m pytest --nbval-lax --current-env
     - cd ../basic_example
     - xvfb-run -a python3 basic_example.py
     - cd ../no_config_parameters/
