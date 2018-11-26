@@ -12,10 +12,12 @@ test_non_release_branches:
     - xvfb-run -a python3 -m pytest --nbval-lax introduction_to_atomap.ipynb
     - cd nanoparticle_example_notebook
     - xvfb-run -a python3 -m pytest --nbval-lax --current-env
+    - cd ../adf_quantification_notebook
+    - xvfb-run -a python3 -m pytest --nbval-lax --current-env
     - cd ../scripts
-    - xvfb-run -a python3 minimal_example_perovskite_100.py
-    - xvfb-run -a python3 minimal_example_perovskite_100_manual.py
-    - xvfb-run -a python3 minimal_example_perovskite_110.py
+    - python3 minimal_example_perovskite_100.py
+    - python3 minimal_example_perovskite_100_manual.py
+    - python3 minimal_example_perovskite_110.py
     except:
     - release
 
@@ -33,9 +35,11 @@ test_release_branch:
     - xvfb-run -a python3 -m pytest --nbval-lax introduction_to_atomap.ipynb
     - cd nanoparticle_example_notebook
     - xvfb-run -a python3 -m pytest --nbval-lax --current-env
+    - cd ../adf_quantification_notebook
+    - xvfb-run -a python3 -m pytest --nbval-lax --current-env
     - cd ../scripts
-    - xvfb-run -a python3 minimal_example_perovskite_100.py
-    - xvfb-run -a python3 minimal_example_perovskite_100_manual.py
-    - xvfb-run -a python3 minimal_example_perovskite_110.py
+    - python3 minimal_example_perovskite_100.py
+    - python3 minimal_example_perovskite_100_manual.py
+    - python3 minimal_example_perovskite_110.py
     only:
     - release
