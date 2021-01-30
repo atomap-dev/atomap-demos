@@ -28,6 +28,8 @@ test_non_release_branches:
     - xvfb-run -a python3 -m pytest --nbval-lax --current-env
     - cd ../dumbbell_example_notebook
     - xvfb-run -a python3 -m pytest --nbval-lax --current-env
+    - cd ../3d_atom_structures_using_ase_notebook
+    - xvfb-run -a python3 -m pytest --nbval-lax --current-env
     - cd ../scripts
     - python3 minimal_example_perovskite_100.py
     - python3 minimal_example_perovskite_100_manual.py
@@ -56,6 +58,8 @@ test_release_branch:
     - cd ../several_phases
     - xvfb-run -a python3 -m pytest --nbval-lax --current-env
     - cd ../dumbbell_example_notebook
+    - xvfb-run -a python3 -m pytest --nbval-lax --current-env
+    - cd ../3d_atom_structures_using_ase_notebook
     - xvfb-run -a python3 -m pytest --nbval-lax --current-env
     - cd ../scripts
     - python3 minimal_example_perovskite_100.py
