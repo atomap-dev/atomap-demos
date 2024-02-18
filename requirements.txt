@@ -1,2 +1,3 @@
 atomap>=0.1.4
 hyperspy-gui-ipywidgets>=1.1.1
+ipympl>=0.9.0
