@@ -7,7 +7,8 @@ test_non_release_branches:
           when: on_success
         - when: never
     script:
-    - apt-get install -qy xvfb git
+    - apt update
+    - apt install -qy xvfb git
     - conda install hyperspy exspy pytest nbval -c conda-forge -y
     - git clone -b master --single-branch https://gitlab.com/atomap/atomap.git
     - pip3 install atomap/
