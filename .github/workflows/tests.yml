@@ -13,7 +13,7 @@ jobs:
         with:
           python-version: 3.12
       - name: Install conda-forge dependencies
-        run: conda install pip hyperspy exspy ase pytest nbval -c conda-forge -y
+        run: conda install pip hyperspy exspy ase pytest nbval atomap -c conda-forge -y
       - name: Checkout code
         uses: actions/checkout@v4
       - name: Run Jupyter Notebooks
